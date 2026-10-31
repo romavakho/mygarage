@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Автопарк</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <div id="garage-view">
+        <h1>Мой Автопарк</h1>
+        <div class="cars-container">
+            <div class="car-card" onclick="openCar('nissan', event)">
+                <img src="note535.jpg" alt="Nissan Note E11" class="car-image">
+                <h2>Nissan Note E11</h2>
+                <p>2006 год</p>
+            </div>
+            <div class="car-card" onclick="openCar('duster', event)">
+                <img src="duster554.jpg" alt="Renault Duster" class="car-image">
+                <h2>Renault Duster</h2>
+                <p>2013 год</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="flying-car-container"></div>
+
+    <!-- ЭКРАН С ДЕТАЛЯМИ -->
+    <div id="detail-view">
+        <button class="back-btn" onclick="goBack()">Назад в гараж</button>
+        
+        <div class="hero-spacer" id="hero-spacer"></div>
+
+        <div class="detail-content">
+            <h1 class="car-title-detail" id="car-title"></h1>
+            <p class="short-story" id="car-story"></p>
+
+            <h2>Быстрый справочник</h2>
+            <div class="repair-section" id="car-repairs"></div>
+
+            <div class="manual-section">
+                <h2>📚 База знаний (Ремонт своими руками)</h2>
+                <p>Подробные инструкции по ремонту и обслуживанию вашего автомобиля.</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <button class="download-btn" onclick="openKnowledgeBase()">Открыть онлайн-справочник</button>
+                    <a href="#" id="pdf-download-link" target="_blank" class="download-btn" style="background: #333; text-decoration: none; color: white;">📄 Скачать книгу (PDF)</a>
+                </div>
+            </div>
+        </div> <!-- ЗАКРЫВАЕМ detail-content -->
+    </div> <!-- ЗАКРЫВАЕМ detail-view -->
+
+    <!-- ЭКРАН: БАЗА ЗНАНИЙ -->
+    <div id="knowledge-view">
+        <button class="back-btn" onclick="goBackToDetails()">Назад к машине</button>
+        <h1 class="car-title-detail" id="kb-title"></h1>
+        <div class="kb-content" id="kb-content"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
